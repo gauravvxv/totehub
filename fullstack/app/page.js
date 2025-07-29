@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "./components/Navbar";
+import ImagesGrid from "./components/ImagesGrid";
+import Gallery from "./components/Gallery";
 
 export default function Home() {
   return (
@@ -44,37 +46,9 @@ export default function Home() {
   
 
       {/* Featured Tote Bags */}
-      <section className="py-16 px-6 text-center">
-        <h2 className="text-3xl font-semibold mb-8">Our Signature Collection</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-          {[
-            {
-              name: "Eco Canvas Tote",
-              img: "/tote/tote1.jpg",
-            },
-            {
-              name: "Urban Chic Tote",
-              img: "/tote/tote3.jpg",
-            },
-            {
-              name: "Everyday Essentials Tote",
-              img: "/tote/tote4.jpg",
-            },
-          ].map((product, i) => (
-            <div key={i} className="bg-white rounded-xl shadow-md overflow-hidden">
-              <Image
-                src={product.img}
-                alt={product.name}
-                width={600}
-                height={400}
-                className="w-full h-94"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-medium">{product.name}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
+      <section className="py-16 px-10 text-center">
+        <h2 className="text-3xl font-semibold">Our Signature Collection</h2>
+      <ImagesGrid/>
       </section>
 
         <section
@@ -98,6 +72,14 @@ export default function Home() {
             Shop Now
           </Link>
         </div>
+      </section>
+
+      <section>
+      </section>
+
+
+      <section className="pt-15">
+        <Gallery/>
       </section>
   
 

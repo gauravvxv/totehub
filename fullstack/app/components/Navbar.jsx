@@ -40,7 +40,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white bg-opacity-90 backdrop-blur-sm shadow-md px-6 py-4 space-y-4 text-[#034053]">
+        <div className="md:hidden bg-[#fefae0] bg-opacity-90 backdrop-blur-sm shadow-md px-6 py-4 space-y-4 text-[#034053]">
           <Link href="/" onClick={toggleMenu} className="block hover:text-black">Home</Link>
           <Link href="/products" onClick={toggleMenu} className="block hover:text-black">Products</Link>
           <Link href="/login" onClick={toggleMenu} className="block hover:text-black">Login</Link>
