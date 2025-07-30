@@ -11,22 +11,23 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <header className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-[#034053]">
       <nav className="max-w-7xl mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         {/* Left Nav (Mobile hidden) */}
-        <div className="hidden md:flex space-x-6 text-[#034053] font-medium">
+        <div className="hidden md:flex space-x-6 text-white font-medium">
           <Link href="/" className="hover:text-white transition-colors">Home</Link>
           <Link href="/products" className="hover:text-white transition-colors">Products</Link>
+          <Link href="/about" className="hover:text-white transition-colors">about</Link>
           <Link href="/login" className="hover:text-white transition-colors">Login</Link>
         </div>
 
         {/* Center Logo */}
-        <div className="text-xl md:text-3xl font-bold text-[#034053]">
+        <div className="text-xl md:text-3xl font-bold text-white">
           <Link href="/" className="hover:text-white transition-colors">The ToteHub</Link>
         </div>
 
         {/* Right (Cart + Hamburger for Mobile) */}
-        <div className="flex items-center space-x-4 text-[#034053]">
+        <div className="flex items-center space-x-4 text-white">
           <Link href="/cart" className="text-2xl hover:text-white transition-colors">
             <IoCart />
           </Link>
@@ -40,11 +41,12 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#fefae0] bg-opacity-90 backdrop-blur-sm shadow-md px-6 py-4 space-y-4 text-[#034053]">
+        <div className="md:hidden bg-[#034053] bg-opacity-90 backdrop-blur-sm shadow-md px-6 py-4 space-y-4 text-white">
           <Link href="/" onClick={toggleMenu} className="block hover:text-black">Home</Link>
           <Link href="/products" onClick={toggleMenu} className="block hover:text-black">Products</Link>
-          <Link href="/login" onClick={toggleMenu} className="block hover:text-black">Login</Link>
+          <Link href="/about" className="block hover:text-black">about</Link>
           <Link href="/cart" onClick={toggleMenu} className="block hover:text-black">Cart</Link>
+          <Link href="/login" onClick={toggleMenu} className="block hover:text-black">Login</Link>
         </div>
       )}
     </header>

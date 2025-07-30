@@ -1,20 +1,23 @@
-import './globals.css';
-import { Playfair_Display } from 'next/font/google';
+// app/layout.jsx
+"use client";
 
-const playfair = Playfair_Display({
-  weight: ['400', '600'],
-  subsets: ['latin'],
-});
-
-export const metadata = {
-  title: 'The Tote Hub',
-  description: 'Eco-friendly tote bags for everyone.',
-};
+import "./globals.css";
+import { usePathname } from "next/navigation";
+import Navbar from "../app/components/Navbar";
+import Footer from "./components/Footer";
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const hideNavbar = pathname === "/login" || pathname === "/signup";
+
   return (
     <html lang="en">
-      <body className={playfair.className}>{children}</body>
+      <body>
+        {!hideNavbar && <Navbar />}
+        {children}
+        {!hideNavbar && <Footer />}
+        
+      </body>
     </html>
   );
 }
